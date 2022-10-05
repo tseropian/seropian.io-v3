@@ -1,0 +1,14 @@
+{
+  "name": "seropian-v3",
+  "version": "1.0.0",
+  "description": "3rd version of my landing page powered by Hugo and Tailwind",
+  "main": "index.js",
+  "repository": "https://seropian.io",
+  "author": "Thomas Seropian",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.12",
+    "postcss": "^8.4.17",
+    "tailwindcss": "^3.1.8"
+  }
+}
