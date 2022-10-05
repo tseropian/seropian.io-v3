@@ -8,3 +8,7 @@ This is the 3rd version of my personal landing page, using Hugo, Tailwind CSS, A
 - [ ] DNS using Route53
 - [ ] CI/CD Pipeline using Github Actions
 - [ ] Add actual content on the site
+
+## Inspiration
+- [HTTPS static site with Hugo and Terraform
+](https://nicholasarmstrong.com/2020/05/https-static-site-hugo-terraform/)
