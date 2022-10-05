@@ -1,5 +1,5 @@
 # Seropian.io
-This is the 3rd version of my personal landing page, using Hugo, Tailwind CSS, AWS and Terraform
+This is the 3rd version of [my personal landing page](https://seropian.io), using Hugo, Tailwind CSS, AWS and Terraform
 
 ## To Do
 - [ ] Landing page built using Hugo
