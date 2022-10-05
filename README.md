@@ -12,3 +12,4 @@ This is the 3rd version of [my personal landing page](https://seropian.io), usin
 ## Inspiration
 - [HTTPS static site with Hugo and Terraform
 ](https://nicholasarmstrong.com/2020/05/https-static-site-hugo-terraform/)
+- [Hugo and Tailwind CSS 3.0](https://www.hugotutorial.com/posts/2022-01-03-hugo-and-tailwindcss-3.0/)
