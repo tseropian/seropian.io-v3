@@ -1,14 +1,27 @@
 {
   "name": "seropian-v3",
   "version": "1.0.0",
-  "description": "3rd version of my landing page powered by Hugo and Tailwind",
+  "description": "Hugo & Tailwind CSS 3.0",
   "main": "index.js",
-  "repository": "https://seropian.io",
-  "author": "Thomas Seropian",
-  "license": "MIT",
+  "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "^10.4.12",
-    "postcss": "^8.4.17",
-    "tailwindcss": "^3.1.8"
-  }
+    "@tailwindcss/typography": "^0.5.4",
+    "autoprefixer": "^10.4.7",
+    "concurrently": "^7.2.2",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^10.0.0",
+    "tailwindcss": "^3.1.6"
+  }, 
+  "scripts": {
+    "start": "concurrently npm:watch:*",
+    "watch:tw": "tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css --watch",
+    "watch:hugo": "hugo server",
+    "build": "hugo --minify"
+  },
+  "keywords": [
+    "hugo",
+    "tailwind",
+    "tailwindcss"
+  ],
+  "author": "tseropian"
 }
