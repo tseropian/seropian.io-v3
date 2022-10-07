@@ -2,6 +2,7 @@ node_modules
 
 # Generated files by hugo
 /site/public/
+/site/public/*
 /site/resources/_gen/
 /site/assets/jsconfig.json
 hugo_stats.json
@@ -12,6 +13,6 @@ hugo.darwin
 hugo.linux
 
 # Temporary lock file while building
-/.hugo_build.lock
+.hugo_build.lock
 
 *.log
