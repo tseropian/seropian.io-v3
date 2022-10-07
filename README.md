@@ -3,9 +3,9 @@ This is the 3rd version of [my personal landing page](https://seropian.io), usin
 
 ## To Do
 - [x] Landing page built using Hugo
-- [ ] Move seropian.io to Route53
-- [ ] Infrastructure deployed with Terraform
-- [ ] AWS S3 for static file hosting
+- [x] Move seropian.io to Route53
+- [x] Infrastructure deployed with Terraform
+- [x] AWS S3 for static file hosting
 - [ ] DNS using Route53
 - [ ] CI/CD Pipeline using Github Actions
 - [ ] Add actual content on the site
