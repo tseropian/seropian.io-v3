@@ -2,7 +2,7 @@
 This is the 3rd version of [my personal landing page](https://seropian.io), using Hugo, Tailwind CSS, AWS and Terraform
 
 ## To Do
-- [ ] Landing page built using Hugo
+- [*] Landing page built using Hugo
 - [ ] Infrastructure deployed with Terraform
 - [ ] AWS S3 for static file hosting
 - [ ] DNS using Route53
