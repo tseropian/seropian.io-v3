@@ -32,7 +32,7 @@ jobs:
 
       - name: Build Tailwind CSS
         working-directory: site
-        run: yarn watch:tw
+        run: yarn build-tw
 
       - name: Build
         working-directory: site
