@@ -16,7 +16,7 @@ on:
         default: 'warning'
  
 jobs:
-  deploy:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -32,7 +32,7 @@ jobs:
 
       - name: Build Tailwind CSS
         working-directory: site
-        run: yarn build:tw
+        run: yarn watch:tw
 
       - name: Build
         working-directory: site
