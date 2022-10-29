@@ -48,11 +48,6 @@
   .icon-linkedin:before {
     content: "\f0e1";
   }
-  ::selection {
-    background: var(--yellow);
-    color: #323232;
-  }
-
   body {
     color: var(--text-black);
     font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -108,7 +103,7 @@
   }
   .title-name {
     font-size: 4em;
-    border-bottom: 8px solid #7f1d1d;
+    border-bottom: 8px solid #494b50;
     line-height: 70px;
     padding-bottom: 5px;
   }
@@ -123,8 +118,13 @@
   .tag {
     color: var(--dark-grey);
   }
-
+  img{ 
+    max-width: 60%;
+  }
   @media (max-width: 350px) {
+    img{ 
+      max-width: 60%;
+    }
     .big_banner_text,
     h1 {
       font-size: 2.5em;
