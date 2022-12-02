@@ -8,3 +8,7 @@ variable "logs_bucket" {
 variable "publish_user" {
   default = "seropian.io-publish"
 }
+
+variable "dns_zone_id" {
+  default = "Z00579571JRDNCU7RPTB1"
+}
