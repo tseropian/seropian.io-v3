@@ -126,5 +126,5 @@ DefaultContentLanguage           = "en"                    # Default language fo
         weight           = 0
         title            = "Thomas Seropian | Freelance Software Engineer / Software Architect (Serverless, AWS, Node.js, TypeScript, React, GraphQL, Microservices, Coffee, Pencils)"
         [languages.en.params]
-            description  = "Website Description"   # Max 160 characters show in search results
-            # footerText   = ""                      # Text to override default footer text (markdown allowed)
+            description  = "Thomas Seropian is a freelance software engineer based in London who loves crafting simple and easy to use applications using latest open source technologies."
+            # footerText   = "" # Text to override default footer text (markdown allowed)
