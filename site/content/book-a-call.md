@@ -15,7 +15,7 @@ If you want to meet in Brixton, I'll buy the coffee.
 
 Services / topics: 
 - Tech advisory
-- Code peer reviews
+- Code peer review
 - Architecture review
 - Coaching
 - Technical interview preparation
