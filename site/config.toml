@@ -87,6 +87,10 @@ DefaultContentLanguage           = "en"                    # Default language fo
     url     = "/#about"
     weight  = 10
 [[menu.main]]
+    name    = "Book a call"
+    url     = "/book-a-call"
+    weight  = 20
+[[menu.main]]
     name    = "CV"
     url     = "/#cv"
     weight  = 20
