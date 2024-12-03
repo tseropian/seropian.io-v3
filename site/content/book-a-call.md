@@ -1,6 +1,6 @@
 ---
-title: "Book a call"
-date: 2021-12-18T11:10:36+08:00
+title: Book a call
+date: 2021-12-18T03:10:36.000Z
 draft: false
 language: en
 description: Free 30min advisory session with senior software engineer Thomas Seropian
@@ -8,6 +8,7 @@ description: Free 30min advisory session with senior software engineer Thomas Se
 ```
 Rubber ducking is a simple but effective technique used by programmers and problem-solvers to clarify their thoughts and find solutions to complex issues. By explaining your problem to an inanimate object - in this case, a rubber duck - you are able to organize your thoughts, identify underlying causes, and come up with new ideas.
 ```
+![One more photo]({{site.baseurl}}/site/content/thomas_headshot_hu2278139112768941034.jpg)
 
 I'm offering free 30min _rubber-ducking_ sessions. Use the form below to book a slot. 
 
