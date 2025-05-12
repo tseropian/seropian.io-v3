@@ -128,7 +128,7 @@ DefaultContentLanguage           = "en"                    # Default language fo
         languageCode     = "en-us"
         contentDir       = "content/"
         weight           = 0
-        title            = "Thomas Seropian | Freelance Software Engineer / Software Architect (Serverless, AWS, Node.js, TypeScript, React, GraphQL, Microservices, Coffee, Pencils)"
+        title            = "Thomas Seropian | Lead / Senior Software Engineer (Serverless, AWS, Node.js, TypeScript, React, GraphQL, Microservices, Coffee, Pencils)"
         [languages.en.params]
-            description  = "Thomas Seropian is a freelance software engineer based in London who loves crafting simple and easy to use applications using latest open source technologies."
+            description  = "Thomas Seropian is a software engineer based in London who loves crafting simple and easy to use applications using latest open source technologies."
             # footerText   = "" # Text to override default footer text (markdown allowed)
