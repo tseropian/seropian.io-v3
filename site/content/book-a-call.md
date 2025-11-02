@@ -5,18 +5,28 @@ draft: false
 language: en
 description: Free 30min advisory session with senior software engineer Thomas Seropian
 ---
-```
-Rubber ducking is a simple but effective technique used by programmers and problem-solvers to clarify their thoughts and find solutions to complex issues. By explaining your problem to an inanimate object - in this case, a rubber duck - you are able to organize your thoughts, identify underlying causes, and come up with new ideas.
-```
-![One more photo]({{site.baseurl}}/site/content/thomas_headshot_hu2278139112768941034.jpg)
 
+### Mentoring
+<a href="https://mentorcruise.com/mentor/thomasseropian/">
+<img src="https://cdn.mentorcruise.com/img/banner/navy-sm.svg" width="240" alt="MentorCruise">
+</a>
+
+
+
+### Tech advisory call / Rubber ducking session
 I'm offering free 30min _rubber-ducking_ sessions. Use the form below to book a slot. 
 
-I am also [available for mentoring calls](https://mentorcruise.com/mentor/thomasseropian/).
 
-If you want to meet in Brixton, I'll buy the coffee.
 
-Services / topics:
+`
+Rubber ducking is a simple but effective technique used by programmers and problem-solvers to clarify their thoughts and find solutions to complex issues. 
+By explaining your problem to an inanimate object - in this case, a rubber duck - you are able to organize your thoughts, identify underlying causes, and come up with new ideas.
+`
+
+
+
+
+#### Services / topics:
 
 - Tech advisory
 - Code peer review
