@@ -1,4 +1,5 @@
 {{ partial "head/metadata.html" . }}
+{{ if .Site.Params.umami }}{{ partial "head/umami.html" . }}{{ end }}
 
 {{ define "title" }}
     <h1 class="bold-title is-1">{{ i18n "404_title" . }}</h1>
