@@ -1,7 +1,6 @@
 {{ if .Site.Params.showMenu | default true }}
 <!-- Begin Nav bar -->
-<div class="container">
-    <hr>
+<div class="container site-nav">
     <nav class="navbar" role="navigation" aria-label="main navigation">
         {{ $isHome := .Page.IsHome }}
         <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
@@ -113,7 +112,6 @@
             {{ end }}
         </div>
     </nav>
-    <hr>
 </div>
 <!-- End Nav bar -->
 {{ end }}
