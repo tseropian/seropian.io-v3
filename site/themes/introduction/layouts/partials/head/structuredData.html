@@ -1,0 +1,28 @@
+{{ $sameAs := slice }}
+{{ range .Site.Params.social }}
+{{ $sameAs = $sameAs | append .url }}
+{{ end }}
+{{ $name := "" }}
+{{ with .Site.GetPage "/home" }}{{ $name = .Title }}{{ end }}
+{{ $person := dict
+  "@context" "https://schema.org"
+  "@type" "Person"
+  "name" $name
+  "url" .Site.BaseURL
+  "jobTitle" .Site.Params.role
+  "description" .Site.Params.description
+  "email" (printf "mailto:%s" .Site.Params.email)
+  "sameAs" $sameAs
+}}
+{{ $images := .Resources.ByType "image" }}
+{{ if not $images }}
+{{ with .Site.GetPage "page" "/home" }}
+{{ $images = .Resources.ByType "image" }}
+{{ end }}
+{{ end }}
+{{ range first 1 (sort $images "Params.weight") }}
+{{ $person = merge $person (dict "image" .Permalink) }}
+{{ end }}
+<script type="application/ld+json">
+{{ $person | jsonify | safeJS }}
+</script>
