@@ -12,36 +12,33 @@
     </head>
 
     <body>
+        {{ partial "nav.html" . }}
+
         {{ with .Site.GetPage "/home" }}
-        <section id="top" class="hero is-{{ .Site.Params.home.introHeight | default "fullheight" }}">
-            <!-- Hero head section to play nice with Bulma -->
-            <div class="hero-head"></div>
-
-            <!-- Super sweet Hero body title -->
-            <div class="hero-body">
-                <div class="container has-text-centered">
-                    <!-- Title and tagline -->
-                    <h1 class="bold-title {{ if or (.Site.Params.fadeIn | default true) .Site.Params.fadeInIndex }}fade-in one{{ end }}">
-                        {{ .Title | markdownify }}
-                    </h1>
-                    <div class="subtitle is-3 {{ if or (.Site.Params.fadeIn | default true) .Site.Params.fadeInIndex }}fade-in two{{ end }}">
-                        {{ .Content }}
-                    </div>
-                    <!-- End title and tagline -->
-                    <!-- Some social icons -->
-                    <div class="{{ if or (.Site.Params.fadeIn | default true) .Site.Params.fadeInIndex }}fade-in three{{ end }}">
-                        {{ partial "home/social.html" . }}
-                    </div>
-                    <!-- End top social icons -->
+        <section id="top" class="intro">
+            <div class="container">
+                {{ $fade := or (.Site.Params.fadeIn | default true) .Site.Params.fadeInIndex }}
+                {{ with .Site.Params.role }}
+                <div class="eyebrow {{ if $fade }}fade-in one{{ end }}">{{ . }}</div>
+                {{ end }}
+                <h1 class="bold-title {{ if $fade }}fade-in one{{ end }}">
+                    {{ .Title | markdownify }}
+                </h1>
+                <div class="intro-tagline subtitle is-3 {{ if $fade }}fade-in two{{ end }}">
+                    {{ .Content }}
                 </div>
-            </div> <!-- End of Hero body -->
-            {{ end }}
-
-            <div class="hero-foot {{ if or (.Site.Params.fadeIn | default true) .Site.Params.fadeInIndex }}fade-in three{{ end }}">
-                <!-- Tell them all about it! -->
-                {{ partial "nav.html" . }}
+                <div class="cta-row {{ if $fade }}fade-in three{{ end }}">
+                    {{ with .Site.Params.home.bookCallURL }}
+                    <a class="btn btn-solid" href="{{ . }}">Book a call</a>
+                    {{ end }}
+                    {{ with $.Site.Params.cvFile }}
+                    <a class="btn btn-ghost" href="{{ . }}">Download CV</a>
+                    {{ end }}
+                    {{ partial "home/social.html" . }}
+                </div>
             </div>
-        </section> <!-- Done with Hero -->
+        </section>
+        {{ end }}
 
         {{ with .Site.GetPage "/home" }}
         {{ $home := . }}
@@ -56,12 +53,104 @@
         {{ else if eq (os.Stat .File.Dir).Name "blog" }}
             <!-- Let`s show some blog posts -->
             {{ partial "home/blog.html" . }}
+        {{ else if eq .File.TranslationBaseName "about" }}
+
+        <!-- About: photo + bio + tech-stack pills -->
+        <div class="section band" id="about">
+            <div class="container">
+                <div class="band-head">
+                    <span class="band-eyebrow">{{ .Params.eyebrow | default .Title }}</span>
+                    <h2 class="title is-2">{{ .Params.headline | default .Title }}</h2>
+                </div>
+                <div class="about-grid">
+                    {{ if .Params.Image }}
+                    {{ with $home.Resources.GetMatch .Params.Image }}
+                    {{ with .Resize "360x" }}
+                    <img class="img-responsive avatar about-photo" src="{{ .Permalink }}" alt="{{ $home.Params.Image }}">
+                    {{ end }}
+                    {{ end }}
+                    {{ end }}
+                    <div class="markdown about-copy">
+                        {{ .Content }}
+                        {{ with .Params.tags }}
+                        <div class="tags-row">
+                            {{ range . }}<span class="tag-pill">{{ . }}</span>{{ end }}
+                        </div>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+            {{ partial "top-icon.html" . }}
+        </div>
+
+        {{ else if eq .File.TranslationBaseName "cv" }}
+
+        <!-- Work with me: CV, advisory calls, mentoring -->
+        <div class="section band" id="{{ .File.TranslationBaseName }}">
+            <div class="container">
+                <div class="band-head">
+                    <span class="band-eyebrow">{{ .Params.eyebrow | default .Title }}</span>
+                    <h2 class="title is-2">{{ .Params.headline | default .Title }}</h2>
+                </div>
+                <div class="work-grid">
+                    <div class="markdown work-copy">
+                        {{ .Content }}
+                        {{ if or .Params.callDuration .Params.updated }}
+                        <div class="stats-row">
+                            {{ with .Params.callDuration }}
+                            <div class="stat"><b>{{ . }}</b><span>Free advisory call</span></div>
+                            {{ end }}
+                            {{ with $.Params.updated }}
+                            <div class="stat"><b>{{ . }}</b><span>CV updated</span></div>
+                            {{ end }}
+                        </div>
+                        {{ end }}
+                    </div>
+                    {{ if .Params.actionTitle }}
+                    <div class="work-actions">
+                        <h3>{{ .Params.actionTitle }}</h3>
+                        <p>{{ .Params.actionDesc }}</p>
+                        {{ with .Params.bookURL }}
+                        <a class="btn btn-solid" href="{{ . }}">Book a slot</a>
+                        {{ end }}
+                        {{ with $.Site.Params.cvFile }}
+                        <a class="btn btn-ghost" href="{{ . }}">Download CV (PDF)</a>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+            {{ partial "top-icon.html" . }}
+        </div>
+
+        {{ else if eq .File.TranslationBaseName "links" }}
+
+        <!-- Links: card grid of things I run elsewhere -->
+        <div class="section band" id="links">
+            <div class="container">
+                <div class="band-head">
+                    <span class="band-eyebrow">{{ .Params.eyebrow | default .Title }}</span>
+                    <h2 class="title is-2">{{ .Params.headline | default .Title }}</h2>
+                </div>
+                <div class="link-grid">
+                    {{ range .Params.links }}
+                    <a class="link-card" href="{{ .url }}" target="_blank" rel="noopener">
+                        <span class="link-card-label">{{ .label }}</span>
+                        <span class="link-card-title">{{ .title }}</span>
+                        <span class="link-card-desc">{{ .desc }}</span>
+                    </a>
+                    {{ end }}
+                </div>
+            </div>
+            {{ partial "top-icon.html" . }}
+        </div>
+
         {{ else }}
 
-        <!-- Range through all sections in /home execept contact.md -->
-        <div class="section" id="{{ .File.TranslationBaseName }}">
+        <!-- Fallback: generic section for any other /home page -->
+        <div class="section band" id="{{ .File.TranslationBaseName }}">
             <div class="container">
-                <h2 class="title is-2 has-text-centered">{{ .Title | markdownify }}</h2>
+                <h2 class="title is-2">{{ .Title | markdownify }}</h2>
                 {{ if .Params.Image }}
                 <div class="columns">
                     <div class="column is-one-third has-text-centered">
@@ -76,44 +165,34 @@
                     </div>
                 </div>
                 {{ else }}
-                <div class="markdown has-text-centered">
-                    {{ .Content }}
-                </div>
-                {{ end }}
-            </div>
-            <!-- End About container-->
-            {{ partial "top-icon.html" . }}
-        </div>
-        <div class="container">
-            <hr>
-        </div>
-        {{ end }}
-        {{ end }}
-        {{ end }}
-        {{ end }}
-        <!-- Let`s chat, shall we? -->
-        {{ with .Resources.GetMatch "contact.md" }}
-        <div class="section" id="{{ .File.TranslationBaseName }}">
-            <div class="container has-text-centered">
-                <h2 class="title is-2">{{ .Title | markdownify }}</h2>
                 <div class="markdown">
                     {{ .Content }}
                 </div>
+                {{ end }}
+            </div>
+            {{ partial "top-icon.html" . }}
+        </div>
+        {{ end }}
+        {{ end }}
+        {{ end }}
+        {{ end }}
+
+        <!-- Let`s chat, shall we? -->
+        {{ with .Resources.GetMatch "contact.md" }}
+        <div class="section contact-band" id="{{ .File.TranslationBaseName }}">
+            <div class="container has-text-centered">
+                <span class="band-eyebrow">{{ .Title | markdownify }}</span>
+                {{ with .Site.Params.email }}
+                <a class="contact-email" href="mailto:{{ . }}">{{ . }}</a>
+                {{ end }}
                 {{ if .Site.Params.home.localTime }}
                 <p>{{ i18n "index_currentTime" . }} <span id="time"></span>.</p>
                 {{ end }}
-                {{ with .Site.Params.email }}
-                <h3 class="subtitle is-3 has-text-centered top-pad">
-                    <a href="mailto:{{ . }}">{{ . }}</a>
-                </h3>
-                {{ end }}
-                {{ partial "home/social.html" . }}
+                <div class="contact-social">
+                    {{ partial "home/social.html" . }}
+                </div>
             </div>
-            <!-- End Contact container -->
             {{ partial "top-icon.html" . }}
-        </div>
-        <div class="container">
-            <hr>
         </div>
         {{ end }}
         <!-- End Contact section -->
@@ -121,7 +200,6 @@
 
         {{ partial "footer/text.html" . }}
 
-        <!-- End of fade in three section -->
         {{ partial "footer/scripts.html" . }}
         {{ partial "js/owlCarousel.html" . }}
 

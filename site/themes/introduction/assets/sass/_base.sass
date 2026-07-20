@@ -99,12 +99,12 @@ details[open] summary
 .bold-title
     font-family: $title-family
     font-weight: 700
-    font-size: 6rem
-    line-height: 1.2
-    margin-bottom: 0.25em
+    font-size: clamp(2.4rem, 6vw, 4.2rem)
+    line-height: 1.05
+    letter-spacing: -0.02em
+    margin-bottom: 0.3em
     @include mobile
-        font-size: 3rem
-        text-align: center
+        font-size: 2.4rem
 
 .top-pad
     padding-top: 1rem
@@ -148,6 +148,7 @@ details[open] summary
 
 .navbar
     background-color: $navbar-background-color
+    border-bottom: 1px solid $secondary
 
 .navbar-burger
     margin-right: auto
@@ -311,3 +312,250 @@ details[open] summary
         text-align: center
     figcaption > h4
         font-size: 0.8rem
+
+// ---- sticky site nav ----
+.site-nav
+    position: sticky
+    top: 0
+    z-index: 30
+    background-color: $background
+    padding-top: 0.5rem
+
+// ---- intro / hero ----
+.intro
+    padding: 3.5rem 0 4rem
+    text-align: left
+
+.eyebrow
+    display: inline-flex
+    align-items: center
+    gap: 0.6rem
+    font-family: $family-monospace
+    font-size: 0.74rem
+    letter-spacing: 0.1em
+    text-transform: uppercase
+    color: $muted
+    margin-bottom: 1rem
+    &::before
+        content: ""
+        width: 7px
+        height: 7px
+        border-radius: 50%
+        background-color: $primary
+        display: inline-block
+
+.intro-tagline
+    font-size: 1.2rem
+    max-width: 46ch
+    text-align: left
+    margin: 0
+    color: $body-color
+    strong
+        color: $h-color
+        font-weight: 600
+
+// ---- section bands ----
+.band
+    border-top: 1px solid $secondary
+    padding: 3.5rem 0
+    text-align: left
+
+.band-head
+    display: flex
+    align-items: baseline
+    gap: 1rem
+    flex-wrap: wrap
+    margin-bottom: 1.75rem
+
+.band-eyebrow
+    font-family: $family-monospace
+    font-size: 0.72rem
+    letter-spacing: 0.1em
+    text-transform: uppercase
+    color: $primary
+    white-space: nowrap
+
+// ---- buttons ----
+.cta-row
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    gap: 0.9rem
+    margin-top: 1.75rem
+
+.btn
+    font-family: $family-sans-serif
+    font-weight: 600
+    font-size: 0.92rem
+    padding: 0.7rem 1.25rem
+    border-radius: 8px
+    border: 1px solid transparent
+    display: inline-flex
+    align-items: center
+    gap: 0.5rem
+    transition: background-color .15s ease, color .15s ease, border-color .15s ease
+    cursor: pointer
+
+.btn-solid
+    background-color: $primary
+    color: $background
+    &:hover
+        background-color: $h-color
+        color: $background
+
+.btn-ghost
+    border-color: $secondary
+    color: $h-color
+    &:hover
+        border-color: $primary
+        color: $primary
+
+// ---- tag pills ----
+.tags-row
+    display: flex
+    flex-wrap: wrap
+    gap: 0.5rem
+    margin-top: 1.4rem
+
+.tag-pill
+    font-family: $family-monospace
+    font-size: 0.72rem
+    padding: 0.3rem 0.6rem
+    border-radius: 6px
+    background-color: $paper
+    color: $body-color
+    border: 1px solid $secondary
+
+// ---- about band ----
+.about-grid
+    display: grid
+    grid-template-columns: 180px 1fr
+    gap: 2.25rem
+    align-items: start
+    text-align: left
+    @include mobile
+        grid-template-columns: 1fr
+
+.about-photo
+    width: 180px
+    height: 180px
+    object-fit: cover
+    @include mobile
+        width: 120px
+        height: 120px
+
+.about-copy p
+    max-width: 62ch
+
+// ---- work band ----
+.work-grid
+    display: grid
+    grid-template-columns: 1.3fr 1fr
+    gap: 2.5rem
+    text-align: left
+    @include mobile
+        grid-template-columns: 1fr
+
+.stats-row
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: 1.25rem
+    margin-top: 1.5rem
+    max-width: 360px
+
+.stat b
+    display: block
+    font-family: $title-family
+    font-weight: 700
+    font-size: 1.5rem
+    color: $h-color
+
+.stat span
+    font-family: $family-monospace
+    font-size: 0.66rem
+    letter-spacing: 0.06em
+    text-transform: uppercase
+    color: $muted
+
+.work-actions
+    background-color: $paper
+    border: 1px solid $secondary
+    border-radius: 14px
+    padding: 1.6rem
+    display: flex
+    flex-direction: column
+    gap: 0.85rem
+    align-self: start
+    h3
+        font-family: $title-family
+        font-weight: 500
+        font-size: 1.1rem
+        color: $h-color
+        margin: 0
+    p
+        margin: 0
+        font-size: 0.92rem
+        color: $body-color
+    .btn
+        justify-content: center
+
+// ---- links card grid ----
+.link-grid
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: 0.9rem
+    text-align: left
+    @include mobile
+        grid-template-columns: 1fr
+
+.link-card
+    display: block
+    border: 1px solid $secondary
+    border-radius: 12px
+    padding: 1.1rem 1.25rem
+    transition: border-color .15s ease, transform .15s ease
+    &:hover
+        border-color: $primary
+        transform: translateY(-2px)
+
+.link-card-label
+    display: block
+    font-family: $family-monospace
+    font-size: 0.66rem
+    letter-spacing: 0.08em
+    text-transform: uppercase
+    color: $muted
+
+.link-card-title
+    display: block
+    font-family: $title-family
+    font-weight: 500
+    font-size: 1.05rem
+    color: $h-color
+    margin: 0.15rem 0
+
+.link-card-desc
+    display: block
+    font-size: 0.88rem
+    color: $body-color
+
+// ---- contact band ----
+.contact-band
+    border-top: 1px solid $secondary
+    padding: 4rem 0 2.5rem
+
+.contact-band .band-eyebrow
+    display: block
+    margin-bottom: 1rem
+
+.contact-email
+    font-family: $title-family
+    font-weight: 500
+    font-size: clamp(1.6rem, 4vw, 2.4rem)
+    color: $h-color
+    letter-spacing: -0.01em
+    &:hover
+        color: $primary
+
+.contact-social
+    margin-top: 1.6rem

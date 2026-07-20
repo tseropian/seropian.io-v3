@@ -13,6 +13,8 @@ DefaultContentLanguage           = "en"                    # Default language fo
     fadeInIndex                  = false                   # Turn on/off the fade-in effect on the index page even if fade-in was otherwise turned off
     dateFormat                   = "Jan 2, 2006"
     email                        = "thomas@seropian.io"   # E-mail address for contact section
+    role                         = "Lead / Senior Software Engineer"  # Eyebrow shown above the name in the hero
+    cvFile                       = "/files/CV_Seropian_Thomas_202601.pdf"  # Canonical CV download, used in hero + work band
     umami                        = true
     # customCSS                  = ["foo.css"]             # Include custom css files placed under assets/
     # customJS                   = ["foo.js"]              # Include custom JavaScript files placed under assets/
@@ -20,7 +22,7 @@ DefaultContentLanguage           = "en"                    # Default language fo
 
     # Configure the home page
     [params.home]
-        introHeight              = "fullheight"            # Input either "medium" or "large" or "fullheight"
+        bookCallURL              = "/book-a-call"          # Hero "Book a call" button target
         showLatest               = true                    # Show latest blog post summary
         showAllPosts             = false                   # Set true to list all posts on home page, or set false to link to separate blog list page
         allPostsArchiveFormat    = true                    # show all posts in an archive format
@@ -88,17 +90,21 @@ DefaultContentLanguage           = "en"                    # Default language fo
     url     = "/#about"
     weight  = 10
 [[menu.main]]
-    name    = "Book a call"
-    url     = "/book-a-call"
-    weight  = 20
-[[menu.main]]
-    name    = "CV"
+    name    = "Work"
     url     = "/#cv"
     weight  = 20
+[[menu.main]]
+    name    = "Book a call"
+    url     = "/book-a-call"
+    weight  = 25
 [[menu.main]]
     name    = "Links"
     url     = "/#links"
     weight  = 30
+[[menu.main]]
+    name    = "Contact"
+    url     = "/#contact"
+    weight  = 40
 
 # We only use tag as a taxonomies
 # You can add more by yourself

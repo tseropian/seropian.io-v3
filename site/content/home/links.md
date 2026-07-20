@@ -1,11 +1,31 @@
 ---
 title: "Links"
 weight: 40
+eyebrow: "Elsewhere"
+headline: "Other things I run"
+links:
+  - label: "Photography"
+    title: "Follow The Way"
+    url: "https://followtheway.info"
+    desc: "My photoblog."
+  - label: "Newsletter"
+    title: "Fresh New Sound"
+    url: "https://freshnewsound.org"
+    desc: "A weekly musical newsletter."
+  - label: "Writing"
+    title: "Not Saved"
+    url: "https://notsaved.org"
+    desc: "A brain-dump blog."
+  - label: "Trivia"
+    title: "Today I Learned"
+    url: "https://todayilearned.cc"
+    desc: "My Wikipedia searches."
+  - label: "Football"
+    title: "Clapton CFC"
+    url: "https://claptoncfc.co.uk"
+    desc: "Clapton Community Football Club."
+  - label: "Data viz"
+    title: "Hoopcharts"
+    url: "https://hoopcharts.xyz/"
+    desc: "Nerdy NBA data visualisations."
 ---
-
-* [Follow The Way: my photoblog](https://followtheway.info)
-* [A weekly musical newsletter](https://freshnewsound.org)
-* [A brain dump blog](https://notsaved.org)
-* [My wikipedia searches](https://todayilearned.cc)
-* [Clapton Community Football Club](https://claptoncfc.co.uk)
-* [Nerdy NBA data visualisations](https://hoopcharts.xyz/)
