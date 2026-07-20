@@ -24,17 +24,23 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 'latest'
+          # Pinned below v0.161.0: Hugo's Node-script resolver (common/hexec)
+          # only checks the first "node_modules" match in a wrapper script,
+          # which misfires on pnpm's peer-qualified .bin shims (e.g.
+          # postcss-cli's peerDependency on postcss) and fails with
+          # `binary "postcss" is not a Node.js script`. Still broken as of
+          # v0.164.0/HEAD upstream; bump once gohugoio/hugo fixes it.
+          hugo-version: '0.160.1'
           extended: true
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          package_json_file: site/package.json
 
       - name: Install
         working-directory: site
-        run: yarn
-
-      - name: Build Tailwind CSS
-        working-directory: site
-        run: yarn build-tw
+        run: pnpm install
 
       - name: Build
         working-directory: site

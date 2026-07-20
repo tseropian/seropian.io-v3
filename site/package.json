@@ -1,31 +1,24 @@
 {
   "name": "seropian-v3",
   "version": "1.0.0",
-  "description": "Hugo & Tailwind CSS 3.0",
+  "description": "Hugo & Bulma",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.4",
     "autoprefixer": "^10.4.13",
-    "concurrently": "^7.2.2",
     "postcss": "^8.4.20",
-    "postcss-cli": "^10.1.0",
-    "tailwindcss": "^3.1.6"
+    "postcss-cli": "^10.1.0"
   },
   "scripts": {
-    "start": "concurrently npm:watch:*",
-    "build-tw:watch": "tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css --watch",
-    "build-tw": "tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css",
-    "watch:hugo": "hugo server",
+    "start": "hugo server",
     "build": "hugo --minify"
   },
   "keywords": [
     "hugo",
-    "tailwind",
-    "tailwindcss"
+    "bulma"
   ],
   "author": "tseropian",
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
+  "packageManager": "pnpm@11.15.1+sha512.81350b07e53c9538a02f1f2303b4290fa2d7be04e56e2a970c4cc4b417dc761de196edabd49d55c7dc9580db81007c44143e4e3d7e462b3000d23c255122d065",
   "browserslist": [
     "defaults"
   ]
