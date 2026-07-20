@@ -36,10 +36,6 @@ jobs:
         working-directory: site
         run: pnpm install
 
-      - name: Build Tailwind CSS
-        working-directory: site
-        run: pnpm build-tw
-
       - name: Build
         working-directory: site
         run: hugo
