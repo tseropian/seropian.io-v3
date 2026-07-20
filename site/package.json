@@ -4,7 +4,11 @@
   "description": "Hugo & Bulma",
   "main": "index.js",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.20",
+    "postcss-cli": "^10.1.0"
+  },
   "scripts": {
     "start": "hugo server",
     "build": "hugo --minify"

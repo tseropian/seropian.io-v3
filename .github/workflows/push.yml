@@ -24,7 +24,13 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 'latest'
+          # Pinned below v0.161.0: Hugo's Node-script resolver (common/hexec)
+          # only checks the first "node_modules" match in a wrapper script,
+          # which misfires on pnpm's peer-qualified .bin shims (e.g.
+          # postcss-cli's peerDependency on postcss) and fails with
+          # `binary "postcss" is not a Node.js script`. Still broken as of
+          # v0.164.0/HEAD upstream; bump once gohugoio/hugo fixes it.
+          hugo-version: '0.160.1'
           extended: true
 
       - name: Setup pnpm
