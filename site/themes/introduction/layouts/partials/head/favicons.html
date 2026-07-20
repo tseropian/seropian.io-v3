@@ -1,3 +1,18 @@
-{{ with .Site.Params.favicon }}
-<link rel="shortcut icon" href="{{ . | relURL }}">
+{{ $images := .Resources.ByType "image" }}
+{{ if not $images }}
+{{ with .Site.GetPage "page" "/home" }}
+{{ $images = .Resources.ByType "image" }}
 {{ end }}
+{{ end }}
+{{ range first 1 (sort $images "Params.weight") }}
+{{ with .Fill "32x32 Center png" }}
+<link rel="icon" type="image/png" sizes="32x32" href="{{ .Permalink }}">
+{{ end }}
+{{ with .Fill "180x180 Center png" }}
+<link rel="apple-touch-icon" sizes="180x180" href="{{ .Permalink }}">
+{{ end }}
+{{ with (.Fill "192x192 Center png") | resources.Copy "/android-chrome-192x192.png" }}<!-- manifest icon: {{ .RelPermalink }} -->{{ end }}
+{{ with (.Fill "512x512 Center png") | resources.Copy "/android-chrome-512x512.png" }}<!-- manifest icon: {{ .RelPermalink }} -->{{ end }}
+{{ end }}
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="manifest" href="/site.webmanifest">

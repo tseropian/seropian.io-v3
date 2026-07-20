@@ -6,7 +6,6 @@ DefaultContentLanguage           = "en"                    # Default language fo
 
 [params]
     themeStyle                   = "auto"                   # Choose "light" or "dark" or "auto"
-    favicon                      = "/img/fav.ico"          # Path to favicon file
     showMenu                     = true                    # Show navigation menu
     showRSSButton                = false                   # Show rss button in navigation
     fadeIn                       = true                    # Turn on/off the fade-in effect
@@ -14,6 +13,7 @@ DefaultContentLanguage           = "en"                    # Default language fo
     dateFormat                   = "Jan 2, 2006"
     email                        = "thomas@seropian.io"   # E-mail address for contact section
     role                         = "Lead / Senior Software Engineer"  # Eyebrow shown above the name in the hero
+    twitterHandle                = "@thoomyorke"          # X/Twitter handle used in twitter:site meta tag
     cvFile                       = "/files/CV_Seropian_Thomas_202601.pdf"  # Canonical CV download, used in hero + work band
     umami                        = true
     # customCSS                  = ["foo.css"]             # Include custom css files placed under assets/
@@ -135,7 +135,7 @@ DefaultContentLanguage           = "en"                    # Default language fo
         languageCode     = "en-us"
         contentDir       = "content/"
         weight           = 0
-        title            = "Thomas Seropian | Lead / Senior Software Engineer (Serverless, AWS, Node.js, TypeScript, React, GraphQL, Microservices, Coffee, Pencils)"
+        title            = "Thomas Seropian | Lead / Senior Software Engineer"
         [languages.en.params]
             description  = "Thomas Seropian is a software engineer based in London who loves crafting simple and easy to use applications using latest open source technologies."
             # footerText   = "" # Text to override default footer text (markdown allowed)
