@@ -27,14 +27,18 @@ jobs:
           hugo-version: 'latest'
           extended: true
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          package_json_file: site/package.json
 
       - name: Install
         working-directory: site
-        run: yarn
+        run: pnpm install
 
       - name: Build Tailwind CSS
         working-directory: site
-        run: yarn build-tw
+        run: pnpm build-tw
 
       - name: Build
         working-directory: site
