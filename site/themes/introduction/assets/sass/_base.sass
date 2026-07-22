@@ -33,6 +33,11 @@ a
     &:active
         color: $primary
 
+.container
+    @include mobile
+        padding-left: 1.25rem
+        padding-right: 1.25rem
+
 h1, h2, .title, .subtitle
     color: $h-color
 
@@ -152,7 +157,7 @@ details[open] summary
 
 .navbar-burger
     margin-right: auto
-    color: $primary
+    color: $h-color
 
 .navbar-burger:hover
     background-color: $navbar-background-color
