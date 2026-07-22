@@ -164,6 +164,17 @@ details[open] summary
     &:hover, &:active
         background-color: $navbar-background-color !important
 
+// Bulma's own navbar component CSS is only ever compiled once, against the
+// light-theme variables (see style.sass: bulma-import isn't re-imported inside
+// the dark-mode @media block). Without this, the mobile dropdown keeps a
+// hardcoded light background while .navbar-item text above correctly switches
+// to a dark-mode color, making the open menu unreadable in dark mode.
+@media screen and (max-width: 1023px)
+    .navbar-menu
+        background-color: $navbar-background-color
+    .navbar-item
+        padding: 0.85rem 1.25rem
+
 .owl-nav
     height: 50px
 
